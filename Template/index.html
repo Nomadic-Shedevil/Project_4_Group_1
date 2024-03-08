@@ -5,6 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mushroom Edibility Prediction</title>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            /* Placeholder for a pixelated font */
+            background-color: #5c94fc;
+            /* Sky blue background, reminiscent of Mario levels */
+            color: white;
+            text-align: center;
+        }
+
+        form {
+            background-color: #ff8c00;
+            /* Mushroom orange */
+            padding: 20px;
+            margin: auto;
+            width: 50%;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #000;
+        }
+
+        select,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ff0000;
+            /* Mario's cap red */
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #ff0;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            console.log("Script loaded"); // Confirm the script loads
+            $('form').submit(function (event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                console.log("Form Data: ", formData); // Inspect serialized data
+                $.ajax({
+                    type: 'POST',
+                    url: '/predict',
+                    data: formData,
+                    success: function (response) {
+                        console.log("Success Response: ", response); // Check the response
+                        $('#prediction-result').html("Prediction: The mushroom is <strong>" + response.result + "</strong>.");
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error Response: ", xhr.responseText); // Log any error
+                    }
+                });
+            });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -234,15 +301,11 @@
             </select>
         </div>
         <div>
-            <button type="submit">Predict Edibility</button>
+            <button type="submit">Is it Edible?</button>
         </div>
     </form>
 
-    {% if prediction %}
-    <div>
-        <h2>Prediction: The mushroom is {{ prediction }}</h2>
-    </div>
-    {% endif %}
+    <div id="prediction-result"></div>
 </body>
 
 </html>
