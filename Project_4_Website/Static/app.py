@@ -1,8 +1,9 @@
+#import libraries
+import numpy as np
 from flask import Flask, render_template, request, jsonify
 import pickle
 
 app = Flask(__name__)
-app.secret_key = "secret key"
 
 model_path = 'rf_model_optimized.pkl'
 ohe_model = 'ohe_model.pkl'
@@ -12,10 +13,14 @@ with open(model_path, 'rb') as model_file:
    
 with open(ohe_model, 'rb') as model_file_2: 
     model_2 = pickle.load(model_file_2)
-    
-@app.route('/predict', methods=['POST', 'GET'])
+
+#default page of our web-app
+@app.route('/')
+def home():
+    return render_template('index.html')
+ 
+@app.route('/predict', methods=['POST'])
 def predict():
-    if request.method == 'GET':
 
         capshape_val = request.form.get('cap-shape')
         gillspace_val = request.form.get("gill-spacing")
@@ -31,15 +36,14 @@ def predict():
         data = [capshape_val, gillspace_val, gillcolor_val, stalkshape_val, stalkroot_val, stalkcolorbelowring_val, ring_val, sporeprint_val, 
             population_val, habitat_val]
 
-        form_data = [int(data[attribute]) for attribute in data]
-        model_2.transform([form_data])
-        prediction = model.predict([form_data])
+     #For rendering results on HTML GUI
+        form_data = [float(x) for x in request.form.values()]
+        final_features = [np.array(form_data)]
+        transformed_features = model_2.transform(final_features)
+        prediction = model.predict(transformed_features)
         result = 'Edible' if prediction == 0 else 'Poisonous'
-        return jsonify(result=result)
-    
-    elif request.method == 'POST':
-        return render_template('template.html')
-    
+        return render_template('index.html', prediction_text='Mushroom is :{}'.format(result))
+
 
 if __name__ == '__main__':
     app.run(debug=True)

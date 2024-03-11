@@ -58,7 +58,7 @@
                 console.log("Form Data: ", formData); // Inspect serialized data
                 $.ajax({
                     type: 'POST',
-                    url: '/predict',
+                    url: '/predict/',
                     data: formData,
                     success: function (response) {
                         console.log("Success Response: ", response); // Check the response
@@ -76,7 +76,7 @@
 
 <body>
     <h1>Mushroom Edibility Prediction</h1>
-    <form action="/" method="post">
+    <form action="{{url_for('predict')}}" method="POST">
         <div>
             <label for="cap-shape">Cap Shape:</label>
             <select id="cap-shape" name="cap-shape">
@@ -89,71 +89,11 @@
             </select>
         </div>
         <div>
-            <label for="cap-surface">Cap Surface:</label>
-            <select id="cap-surface" name="cap-surface">
-                <option value="0">Fibrous</option>
-                <option value="1">Grooves</option>
-                <option value="2">Scaly</option>
-                <option value="3">Smooth</option>
-            </select>
-        </div>
-        <div>
-            <label for="cap-color">Cap Color:</label>
-            <select id="cap-color" name="cap-color">
-                <option value="0">Brown</option>
-                <option value="1">Buff</option>
-                <option value="2">Cinnamon</option>
-                <option value="3">Gray</option>
-                <option value="4">Green</option>
-                <option value="5">Pink</option>
-                <option value="6">Purple</option>
-                <option value="7">Red</option>
-                <option value="8">White</option>
-                <option value="9">Yellow</option>
-            </select>
-        </div>
-        <div>
-            <label for="bruises">Bruises:</label>
-            <select id="bruises" name="bruises">
-                <option value="0">Bruises</option>
-                <option value="1">No</option>
-            </select>
-        </div>
-        <div>
-            <label for="odor">Odor:</label>
-            <select id="odor" name="odor">
-                <option value="0">Almond</option>
-                <option value="1">Anise</option>
-                <option value="2">Creosote</option>
-                <option value="3">Fishy</option>
-                <option value="4">Foul</option>
-                <option value="5">Musty</option>
-                <option value="6">None</option>
-                <option value="7">Pungent</option>
-                <option value="8">Spicy</option>
-            </select>
-        </div>
-        <label for="gill-attachment">Gill Attachment:</label>
-        <select id="gill-attachment" name="gill-attachment">
-            <option value="0">Attached</option>
-            <option value="1">Descending</option>
-            <option value="2">Free</option>
-            <option value="3">Notched</option>
-        </select>
-        </div>
-        <div>
             <label for="gill-spacing">Gill Spacing:</label>
             <select id="gill-spacing" name="gill-spacing">
                 <option value="0">Close</option>
                 <option value="1">Crowded</option>
                 <option value="2">Distant</option>
-            </select>
-        </div>
-        <div>
-            <label for="gill-size">Gill Size:</label>
-            <select id="gill-size" name="gill-size">
-                <option value="0">Broad</option>
-                <option value="1">Narrow</option>
             </select>
         </div>
         <div>
@@ -191,35 +131,6 @@
                 <option value="6">Missing</option>
             </select>
         </div>
-        <div><label for="stalk-surface-above-ring">Stalk Surface Above Ring:</label>
-            <select id="stalk-surface-above-ring" name="stalk-surface-above-ring">
-                <option value="0">Fibrous</option>
-                <option value="1">Scaly</option>
-                <option value="2">Silky</option>
-                <option value="3">Smooth</option>
-            </select>
-        </div>
-        <div><label for="stalk-surface-below-ring">Stalk Surface Below Ring:</label>
-            <select id="stalk-surface-below-ring" name="stalk-surface-below-ring">
-                <option value="0">Fibrous</option>
-                <option value="1">Scaly</option>
-                <option value="2">Silky</option>
-                <option value="3">Smooth</option>
-            </select>
-        </div>
-        <div><label for="stalk-color-above-ring">Stalk Color Above Ring:</label>
-            <select id="stalk-color-above-ring" name="stalk-color-above-ring">
-                <option value="0">Brown</option>
-                <option value="1">Buff</option>
-                <option value="2">Cinnamon</option>
-                <option value="3">Gray</option>
-                <option value="4">Orange</option>
-                <option value="5">Pink</option>
-                <option value="6">Red</option>
-                <option value="7">White</option>
-                <option value="8">Yellow</option>
-            </select>
-        </div>
         <div><label for="stalk-color-below-ring">Stalk Color Below Ring:</label>
             <select id="stalk-color-below-ring" name="stalk-color-below-ring">
                 <option value="0">Brown</option>
@@ -231,27 +142,6 @@
                 <option value="6">Red</option>
                 <option value="7">White</option>
                 <option value="8">Yellow</option>
-            </select>
-        </div>
-        <div><label for="veil-type">Veil Type:</label>
-            <select id="veil-type" name="veil-type">
-                <option value="0">Partial</option>
-                <option value="1">Universal</option>
-            </select>
-        </div>
-        <div> <label for="veil-color">Veil Color:</label>
-            <select id="veil-color" name="veil-color">
-                <option value="0">Brown</option>
-                <option value="1">Orange</option>
-                <option value="2">White</option>
-                <option value="3">Yellow</option>
-            </select>
-        </div>
-        <div><label for="ring-number">Ring Number:</label>
-            <select id="ring-number" name="ring-number">
-                <option value="0">None</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
             </select>
         </div>
         <div><label for="ring-type">Ring Type:</label>
@@ -301,7 +191,7 @@
             </select>
         </div>
         <div>
-            <button type="submit">Is it Edible?</button>
+            <button type="submit"  class="btn">Is it edible?</button>
         </div>
     </form>
 
