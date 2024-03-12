@@ -40,6 +40,9 @@ body::after {
         <section id="special-considerations">
             <h2>Special Considerations in the Dataset:</h2>
             <p>The dataset is comprised of entirely categorical classifications for various attributes of mushroom species. Each species is identified as “definitely edible, definitely poisonous, or of unknown edibility and not recommended (“Mushroom Classification.” Kaggle.com). All attributes are assigned unique letter classifications that determine the different features. For example, on “Cap Shape,” the letter “b” stands for a bell-shaped cap top of the mushroom.</p>
+            <h2>Shape of the Dataset:</h2>
+<p>The dataset is clearly a supervised learning set with a clear “Class” column that determines whether a mushroom is edible or poisonous. There are 22 features for mushroom attributes.</p>
+<p>The dataset is comprised of entirely categorical classifications for various attributes of mushroom species. Each species is identified as “definitely edible, definitely poisonous, or of unknown edibility and not recommended (“Mushroom Classification.” Kaggle.com). All attributes are assigned unique letter classifications that determine the different features. For example, on “Cap Shape,” the letter “b” stands for a bell-shaped cap top of the mushroom.</p>
         </section>
         <section id="list-of-attributes">
             <h2>List of Attributes:</h2>
@@ -76,8 +79,13 @@ body::after {
                 <h3>Second Logistic Regression Model</h3>
                 <p>The second model was run with 9 features. The features selected were all the features that had to do with the color of the mushrooms such as cap-color. The results of the second model generated a 99% accuracy. Here are the results of the confusion matrix and accuracy score:</p>
                 <img src="../Figures/second logistic.png">
-                <p>This is an interesting result. We did set out to find out which model would be better for the data. However, it turns out that both the Random Forest and Logistic Regression models are equally capable of processing the data and helping us answer the question: Is it edible or poisonous.</p>
+                <h3>Final Results of Logistic Regression Model</h3>
+                <p>When comparing the confusion matrix and accuracy score for both the logistic regression models, there is only a difference of 1% in the accuracy. It can be concluded that the reduction of features in the model does not matter.</p>
+                <h3>Comparison of Results between Random Forest and Logistic Regression Models</h3>
+                <p>Both models are used when the data that needs to be analyzed are categorical classifications and answers to questions that have two or more finite outcomes. For comparison, we looked at the accuracy score of each model. Both models scored identically. The first models scored 1.0 and the second models scored .99.  Below is a table of the accuracy scores.</p>
                 <img src="../Figures/comparison between models.png">
+                <p>This is an interesting result. We did set out to find out which model would be better for the data. However, it turns out that both the Random Forest and Logistic Regression models are equally capable of processing the data and helping us answer the question: Is it edible or poisonous.</p>
+                
             </section>
         </section>
     </div>
