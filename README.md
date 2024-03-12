@@ -83,4 +83,25 @@ We created a flask application to predict if a mushroom is edible or poisonous. 
 
 #### Resources:
 
-(https://www.kaggle.com/datasets/uciml/mushroom-classification?resource=download)
+(https://www.kaggle.com/datasets/uciml/mushroom-classification?resource=download).
+
+Comprehensive Guide on Feature Selection. (https://www.kaggle.com/code/prashant111/comprehensive-guide-on-feature-selection).
+
+Multilabel-indicator is not supported for confusion matrix. (https://stackoverflow.com/questions/46953967/multilabel-indicator-is-not-supported-for-confusion-matrix).
+
+How to adjust padding with cutoff or overlapping labels. (https://stackoverflow.com/questions/6774086/how-to-adjust-padding-with-cutoff-or-overlapping-labels).
+
+How do I get the row count of a Pandas DataFrame?. (https://stackoverflow.com/questions/15943769/how-do-i-get-the-row-count-of-a-pandas-dataframe).
+
+How to avoid overlapping of labels & autopct in a pie chart. (https://stackoverflow.com/questions/23577505/how-to-avoid-overlapping-of-labels-autopct-in-a-pie-chart).
+
+NeuronNet Insurance Charges- COLAB RunTime.ipynb. (https://colab.research.google.com/drive/1JmQtNPw7p22TszcKibvtIFQa63ZK-IM4?usp=drive_link).
+
+Pickle your model in Python. (https://medium.com/@maziarizadi/pickle-your-model-in-python-2bbe7dba2bbb#:~:text=Using%20pickle%20%2C%20simply%20save%20your,and%20rb%20for%20read%20mode).
+
+Machine Learning Model Deployment on Heroku Using Flask. (https://towardsdatascience.com/machine-learning-model-deployment-on-heroku-using-flask-467acb4a34da). 
+
+Flask Python Buttons (https://stackoverflow.com/questions/19794695/flask-python-buttons).
+
+
+
