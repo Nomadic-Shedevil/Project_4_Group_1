@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mushroom Edibility Result</title>
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-image: url('super_mario_wallpaper.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .result-container {
+            background-color: #ff8c00; /* Mushroom orange */
+            padding: 20px;
+            margin: auto;
+            width: 50%;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #000;
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #ff0;
+        }
+
+        p {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Mushroom Edibility Result</h1>
+    <div class="result-container">
+        <h2>Result:</h2>
+        <p id="prediction"></p>
+        <button onclick="goBack()">Go Back</button> <!-- Button to go back to the options page -->
+    </div>
+
+    <script>
+        // Function to navigate back to the options page
+        function goBack() {
+            window.history.back();
+        }
+
+        // Get the prediction result from the URL query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const prediction = urlParams.get('prediction');
+
+        // Display the prediction result
+        document.getElementById('prediction').innerText = "Prediction: The mushroom is " + prediction + ".";
+    </script>
+</body>
+
+</html>
