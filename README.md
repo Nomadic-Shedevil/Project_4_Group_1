@@ -1,4 +1,4 @@
-# Will I die?
+# Is it edible or poisonous?
 
 by Jessica Baggett, Ryan Joseph, Melissa Mosby and Christian Suarez
 
@@ -8,7 +8,7 @@ Our dataset, "Mushroom Classification" (Kaggle), was found on Kaggle. We decided
 The "Mushroom Classification" dataset is completely categorical classifications for a number of attributes for 23 species of gilled mushroom in the Agarcius and Leptioa family mushroom. The data was drawn from The Audubon Society Field Guide to North American Mushrooms in 1981.
 
 ### Question:
-Will I die if I eat this mushroom? To analyze the data, we used random forest and logistic regression. We also created a flask application with 10 mushroom attributes to predict if a mushroom is edible or poisonous. Finally, we presented our findings in an HTML file.
+Is this mushroom edible or poisonous? To analyze the data, we used random forest and logistic regression. We also created a flask application with 10 mushroom attributes to predict if a mushroom is edible or poisonous. Finally, we presented our findings in an HTML file.
 
 ### Machine Learning and Analysis:
 Our dataset is supervised learning. Random forest and logistic regression are both strong and robust models that can analyze categorical classifications effectively. Also, these models can analyze our data to fit our yes or no question.
