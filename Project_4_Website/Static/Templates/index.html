@@ -76,126 +76,128 @@
 
 <body>
     <h1>Mushroom Edibility Prediction</h1>
-    <form action="{{url_for('predict')}}" method="POST">
+    <form action="/predict" method="POST">
         <div>
             <label for="cap-shape">Cap Shape:</label>
             <select id="cap-shape" name="cap-shape">
-                <option value="0">Bell</option>
-                <option value="1">Conical</option>
-                <option value="2">Convex</option>
-                <option value="3">Flat</option>
-                <option value="4">Knobbed</option>
-                <option value="5">Sunken</option>
+                <option value="b">Bell</option>
+                <option value="c">Conical</option>
+                <option value="x">Convex</option>
+                <option value="f">Flat</option>
+                <option value="k">Knobbed</option>
+                <option value="s">Sunken</option>
             </select>
         </div>
         <div>
             <label for="gill-spacing">Gill Spacing:</label>
             <select id="gill-spacing" name="gill-spacing">
-                <option value="0">Close</option>
-                <option value="1">Crowded</option>
-                <option value="2">Distant</option>
+                <option value="c">Close</option>
+                <option value="w">Crowded</option>
+                <option value="d">Distant</option>
             </select>
         </div>
         <div>
             <label for="gill-color">Gill Color:</label>
             <select id="gill-color" name="gill-color">
-                <option value="0">Black</option>
-                <option value="1">Brown</option>
-                <option value="2">Buff</option>
-                <option value="3">Chocolate</option>
-                <option value="4">Gray</option>
-                <option value="5">Green</option>
-                <option value="6">Orange</option>
-                <option value="7">Pink</option>
-                <option value="8">Purple</option>
-                <option value="9">Red</option>
-                <option value="10">White</option>
-                <option value="11">Yellow</option>
+                <option value="k">Black</option>
+                <option value="n">Brown</option>
+                <option value="b">Buff</option>
+                <option value="h">Chocolate</option>
+                <option value="g">Gray</option>
+                <option value="r">Green</option>
+                <option value="o">Orange</option>
+                <option value="p">Pink</option>
+                <option value="u">Purple</option>
+                <option value="e">Red</option>
+                <option value="w">White</option>
+                <option value="y">Yellow</option>
             </select>
         </div>
         <div> <label for="stalk-shape">Stalk Shape:</label>
             <select id="stalk-shape" name="stalk-shape">
-                <option value="0">Enlarging</option>
-                <option value="1">Tapering</option>
+                <option value="e">Enlarging</option>
+                <option value="t">Tapering</option>
             </select>
 
         </div>
         <div><label for="stalk-root">Stalk Root:</label>
             <select id="stalk-root" name="stalk-root">
-                <option value="0">Bulbous</option>
-                <option value="1">Club</option>
-                <option value="2">Cup</option>
-                <option value="3">Equal</option>
-                <option value="4">Rhizomorphs</option>
-                <option value="5">Rooted</option>
-                <option value="6">Missing</option>
+                <option value="b">Bulbous</option>
+                <option value="c">Club</option>
+                <option value="u">Cup</option>
+                <option value="e">Equal</option>
+                <option value="z">Rhizomorphs</option>
+                <option value="r">Rooted</option>
+                <option value="z">Missing</option>
             </select>
         </div>
         <div><label for="stalk-color-below-ring">Stalk Color Below Ring:</label>
             <select id="stalk-color-below-ring" name="stalk-color-below-ring">
-                <option value="0">Brown</option>
-                <option value="1">Buff</option>
-                <option value="2">Cinnamon</option>
-                <option value="3">Gray</option>
-                <option value="4">Orange</option>
-                <option value="5">Pink</option>
-                <option value="6">Red</option>
-                <option value="7">White</option>
-                <option value="8">Yellow</option>
+                <option value="n">Brown</option>
+                <option value="b">Buff</option>
+                <option value="c">Cinnamon</option>
+                <option value="g">Gray</option>
+                <option value="o">Orange</option>
+                <option value="p">Pink</option>
+                <option value="e">Red</option>
+                <option value="w">White</option>
+                <option value="y">Yellow</option>
             </select>
         </div>
         <div><label for="ring-type">Ring Type:</label>
             <select id="ring-type" name="ring-type">
-                <option value="0">Cobwebby</option>
-                <option value="1">Evanescent</option>
-                <option value="2">Flaring</option>
-                <option value="3">Large</option>
-                <option value="4">None</option>
-                <option value="5">Pendant</option>
-                <option value="6">Sheathing</option>
-                <option value="7">Zone</option>
+                <option value="e">Evanescent</option>
+                <option value="f">Flaring</option>
+                <option value="l">Large</option>
+                <option value="n">None</option>
+                <option value="p">Pendant</option>
             </select>
         </div>
         <div> <label for="spore-print-color">Spore Print Color:</label>
             <select id="spore-print-color" name="spore-print-color">
-                <option value="0">Black</option>
-                <option value="1">Brown</option>
-                <option value="2">Buff</option>
-                <option value="3">Chocolate</option>
-                <option value="4">Green</option>
-                <option value="5">Orange</option>
-                <option value="6">Purple</option>
-                <option value="7">White</option>
-                <option value="8">Yellow</option>
+                <option value="k">Black</option>
+                <option value="n">Brown</option>
+                <option value="b">Buff</option>
+                <option value="h">Chocolate</option>
+                <option value="r">Green</option>
+                <option value="o">Orange</option>
+                <option value="u">Purple</option>
+                <option value="w">White</option>
+                <option value="y">Yellow</option>
             </select>
         </div>
         <div><label for="population">Population:</label>
             <select id="population" name="population">
-                <option value="0">Abundant</option>
-                <option value="1">Clustered</option>
-                <option value="2">Numerous</option>
-                <option value="3">Scattered</option>
-                <option value="4">Several</option>
-                <option value="5">Solitary</option>
+                <option value="a">Abundant</option>
+                <option value="c">Clustered</option>
+                <option value="n">Numerous</option>
+                <option value="s">Scattered</option>
+                <option value="v">Several</option>
+                <option value="y">Solitary</option>
             </select>
         </div>
         <div> <label for="habitat">Habitat:</label>
             <select id="habitat" name="habitat">
-                <option value="0">Grasses</option>
-                <option value="1">Leaves</option>
-                <option value="2">Meadows</option>
-                <option value="3">Paths</option>
-                <option value="4">Urban</option>
-                <option value="5">Waste</option>
-                <option value="6">Woods</option>
+                <option value="g">Grasses</option>
+                <option value="l">Leaves</option>
+                <option value="m">Meadows</option>
+                <option value="p">Paths</option>
+                <option value="u">Urban</option>
+                <option value="w">Waste</option>
+                <option value="d">Woods</option>
             </select>
         </div>
         <div>
             <button type="submit"  class="btn">Is it edible?</button>
         </div>
     </form>
-
-    <div id="prediction-result"></div>
+<br>
+<br>
+<hr>
+    <div id="prediction-result" style="font-size: 30px; background-color: yellow;"></div>
+    {{prediction}}
+<hr>
+<hr>
 </body>
 
 </html>
