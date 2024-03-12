@@ -1,0 +1,106 @@
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analysis of Mushroom Data</title>
+<link rel="stylesheet" href="../static/css/intro.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="result-container">
+            <h1>Analysis of Mushroom Data</h1>
+            <section id="special-considerations">
+                <h2>Special Considerations in the Dataset:</h2>
+                <p>The dataset is comprised of entirely categorical classifications for various attributes of mushroom
+                    species. Each species is identified as “definitely edible, definitely poisonous, or of unknown
+                    edibility and not recommended (“Mushroom Classification.” Kaggle.com). All attributes are assigned
+                    unique letter classifications that determine the different features. For example, on “Cap Shape,”
+                    the letter “b” stands for a bell-shaped cap top of the mushroom.</p>
+                <h2>Shape of the Dataset:</h2>
+                <p>The dataset is clearly a supervised learning set with a clear “Class” column that determines whether
+                    a mushroom is edible or poisonous. There are 22 features for mushroom attributes.</p>
+                <p>The dataset is comprised of entirely categorical classifications for various attributes of mushroom
+                    species. Each species is identified as “definitely edible, definitely poisonous, or of unknown
+                    edibility and not recommended (“Mushroom Classification.” Kaggle.com). All attributes are assigned
+                    unique letter classifications that determine the different features. For example, on “Cap Shape,”
+                    the letter “b” stands for a bell-shaped cap top of the mushroom.</p>
+            </section>
+            <section id="list-of-attributes">
+                <h2>List of Attributes:</h2>
+                <img src="../../Figures/list_of_attributes.png" alt="List of Attributes">
+            </section>
+
+            <section id="data-analysis-models">
+                <h2>Two Data Analysis Models: Random Forest and Logistic Regression</h2>
+                <p>We decided to use two different models to analyze our data. We selected random forest and logistic
+                    regression. The reasoning behind this was to see if the data would be better fitted to one or the
+                    other.</p>
+                <section id="random-forest-model">
+                    <h2>Random Forest Model</h2>
+                    <p>Model chosen was the Random Forest due to its strength and robust nature regarding various
+                        categorical classifications that would lead to a “yes” or “no” decision, or a “True” or “False”
+                        decision making process, ie: If a mushroom had a certain attribute, yes or no.</p>
+                    <h3>First Random Forest Model</h3>
+                    <p>The first Random Forest model was ran with all 22 features and then an analysis was conducted via
+                        confusion matrix, accuracy score testing, and feature importance ranking.</p>
+                    <img src="../../Figures/first_random_forest_model.png">
+                    <p>The table below shows the results of the feature importance ranking.</p>
+                    <img src="../../Figures/Feature_Importance.png">
+                    <h3>Second Random Forest Model</h3>
+                    <p>A second Random Forest model was ran to optimize the results. We utilized the OnehotEncoder for
+                        the X Matrix and LabelEncoder for the Y Label. Both are needed to maintain attribute integrity
+                        and correctly convert the categorical values to numerical inputs. The optimized model utilized
+                        the top 10 features that were identified in the first model while maintaining accuracy score of
+                        1 and for simplicity in the machine model that powers our application.</p>
+                    <img src="../../Figures/confusion_matrix.png">
+                    <p>The top 10 features show an overwhelming significance in population, spore-print-color, and
+                        ring-type as the highest indicators of a mushroom's deadliness. These top features are optimized
+                        in determining the edibility of mushrooms in the model.</p>
+                    <p>Below is a pie chart that shows the percentage of the highest indicators of a mushroom’s
+                        deadliness:</p>
+                    <img src="../../Figures/Top_10_Features_Pie.png">
+                </section>
+                <section id="logistic-regression-model">
+                    <h2>Logistic Regression Model</h2>
+                    <p>The logistic regression model was selected because it can find answers to questions that have two
+                        or more finite outcomes. Another advantage is that it is one of the most efficient algorithms
+                        when the different outcomes or distinctions represented by the data are linearly separable.</p>
+                    <p>There were two models run. One with all the 22 features and one with 9 features. Below are
+                        further details of the models:</p>
+                    <h3>First Logistic Regression Model</h3>
+                    <p>The first model was run with all 22 features. The class column, whether the mushroom is edible or
+                        poisonous, was separated from the features. The data was trained on all 22 features. The results
+                        of the first model were a 100% accuracy. This was expected given our data. Here is the results
+                        of the confusion matrix and accuracy score:</p>
+                    <img src="../../Figures/First_logistic Regression_model.png">
+                    <p>In the scatter plot below, one feature, odor was selected. The reason for this is that each
+                        feature shows the same scatter plot. The top scatter shows the edible mushrooms and the bottom
+                        scatter shows the poisonous mushrooms.</p>
+                    <img src="../../Figures/Edible or Poisonous scatter.png">
+                    <h3>Second Logistic Regression Model</h3>
+                    <p>The second model was run with 9 features. The features selected were all the features that had to
+                        do with the color of the mushrooms such as cap-color. The results of the second model generated
+                        a 99% accuracy. Here are the results of the confusion matrix and accuracy score:</p>
+                    <img src="../../Figures/second logistic.png">
+                    <h3>Final Results of Logistic Regression Model</h3>
+                    <p>When comparing the confusion matrix and accuracy score for both the logistic regression models,
+                        there is only a difference of 1% in the accuracy. It can be concluded that the reduction of
+                        features in the model does not matter.</p>
+                    <h3>Comparison of Results between Random Forest and Logistic Regression Models</h3>
+                    <p>Both models are used when the data that needs to be analyzed are categorical classifications and
+                        answers to questions that have two or more finite outcomes. For comparison, we looked at the
+                        accuracy score of each model. Both models scored identically. The first models scored 1.0 and
+                        the second models scored .99. Below is a table of the accuracy scores.</p>
+                    <img src="../../Figures/comparison between models.png">
+                    <p>This is an interesting result. We did set out to find out which model would be better for the
+                        data. However, it turns out that both the Random Forest and Logistic Regression models are
+                        equally capable of processing the data and helping us answer the question: Is it edible or
+                        poisonous.</p>
+
+                </section>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
