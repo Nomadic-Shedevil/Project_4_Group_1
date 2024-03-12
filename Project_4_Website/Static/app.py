@@ -60,7 +60,7 @@ def predict():
 
     # my_prediction = model_3.inverse_transform(np.reshape(my_prediction, (-1,1)))  
 
-    prediction = 'poisionous' if my_prediction == '1' else 'edible'            
+    prediction = 'Poisionous' if my_prediction == '1' else 'Edible'            
                               
     app.logger.info(f' this is pred :: {my_prediction}')
 
