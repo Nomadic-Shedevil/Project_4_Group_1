@@ -81,6 +81,6 @@ We created a flask application to predict if a mushroom is edible or poisonous. 
 
 
 
-Resources:
+#### Resources:
 
 (https://www.kaggle.com/datasets/uciml/mushroom-classification?resource=download)
