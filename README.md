@@ -2,6 +2,10 @@
 
 by Jessica Baggett, Ryan Joseph, Melissa Mosby and Christian Suarez
 
+#Where to find presentation
+
+Our website is under the Project_4_Website folder. This is our final presentation. Analyses can be found on Melissa and Jessica branches. Ryan and Jessica branches have app development code. 
+
 ### Background:
 Our dataset, "Mushroom Classification" (Kaggle), was found on Kaggle. We decided to use this dataset because it fits the supervised machine learning and allows for predictions.  
 
