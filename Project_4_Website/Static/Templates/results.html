@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Press Start 2P', cursive;
-            background-image: url('super_mario_wallpaper.png');
+            background-image: url('../../Figures/super_mario_wallpaper.jpeg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -57,10 +57,10 @@
 
         // Get the prediction result from the URL query parameter
         const urlParams = new URLSearchParams(window.location.search);
-        const prediction = urlParams.get('prediction');
+        const prediction = urlParams.get('/result');
 
         // Display the prediction result
-        document.getElementById('prediction').innerText = "Prediction: The mushroom is " + prediction + ".";
+        document.getElementById('prediction-result').innerText = "Prediction: The mushroom is " + prediction + ".";
     </script>
 </body>
 

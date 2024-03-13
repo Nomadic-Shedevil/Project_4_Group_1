@@ -10,6 +10,7 @@
             font-family: 'Press Start 2P', cursive;
             /* Placeholder for a pixelated font */
             background-color: #5c94fc;
+            background-image: url('../../Figures/super_mario_wallpaper.jpeg');
             /* Sky blue background, reminiscent of Mario levels */
             color: white;
             text-align: center;
@@ -58,7 +59,7 @@
                 console.log("Form Data: ", formData); // Inspect serialized data
                 $.ajax({
                     type: 'POST',
-                    url: '/predict/',
+                    url: '/predict',
                     data: formData,
                     success: function (response) {
                         console.log("Success Response: ", response); // Check the response
@@ -188,15 +189,14 @@
             </select>
         </div>
         <div>
-            <button type="submit" class="btn">Is it edible?</button>
+            <button type="submit" class="btn" input type=button href="results.html">Is it edible?</button></a>
         </div>
     </form>
     <br>
     <br>
     <hr>
     <hr>
-    <div id="prediction-result" style="font-size: 30px; background-color: #5c94fc;
-    ;"></div>
+    <div id="prediction-result" style="font-size: 30px; background-color: #5c94fc;"></div>
     {{prediction}}
 <hr>
 <hr>

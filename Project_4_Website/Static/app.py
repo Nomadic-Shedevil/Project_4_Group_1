@@ -37,6 +37,11 @@ def function(data):
 @app.route('/')
 def home():
     return render_template('index.html')
+
+
+# @app.route("/result", methods=["GET"])
+# def file_upload():
+#     return (render_template("results.html", prediction = f'This Mushroom is: {prediction}'))
  
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -60,11 +65,14 @@ def predict():
 
     # my_prediction = model_3.inverse_transform(np.reshape(my_prediction, (-1,1)))  
 
-    prediction = 'Poisionous' if my_prediction == '1' else 'Edible'            
+    prediction = 'Poisionous' if my_prediction == 1 else 'Edible'            
                               
     app.logger.info(f' this is pred :: {my_prediction}')
 
-    return (render_template('index.html', prediction = f'This Mushrom is: {prediction}'))
+    return (render_template('index.html', prediction = f'This Mushroom is: {prediction}'))
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
